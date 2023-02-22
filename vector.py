@@ -3,6 +3,9 @@ class Vector:
         self.len = len(vector)
         self.content = vector
 
+    def show(self):
+        print(self.content)
+
     def get_element(self, ind):
         if ind < 1:
             raise IndexError("Index should be larger than 0!")
@@ -29,3 +32,6 @@ class Vector:
             result += self.get_element(i)*b.get_element(i)
 
         return result
+
+    def multiply_by_scalar(self, k):
+        return Vector([k*self.get_element(i) for i in range(1, self.len+1)])
